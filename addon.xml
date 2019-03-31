@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.qbit" name="qbit plugin" version="0.0.1" provider-name="elo">
+<addon id="qbit.kodi" name="Kodi qbit parser ftp" version="0.0.1" provider-name="xyl3, modz3l">
     <requires>
         <import addon="xbmc.python" version="2.25.0"/>
         <import addon="script.module.routing" version="0.2.0"/>
@@ -9,14 +9,14 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en_GB">yes</summary>
+        <summary lang="en_GB">a lot</summary>
         <description lang="en_GB"></description>
         <language></language>
         <platform>android linux windx</platform>
         <license>MIT</license>
         <forum></forum>
-        <website>w</website>
-        <email>wok</email>
+        <website>n</website>
+        <email>k</email>
         <source></source>
         <news></news>
         <disclaimer></disclaimer>

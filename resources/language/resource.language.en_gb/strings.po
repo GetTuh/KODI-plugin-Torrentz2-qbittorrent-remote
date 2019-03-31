@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: qbit plugin
-# Addon id: plugin.qbit
-# Addon Provider: elo
+# Addon Name: Kodi qbit parser ftp
+# Addon id: qbit.kodi
+# Addon Provider: xyl3, modz3l
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"

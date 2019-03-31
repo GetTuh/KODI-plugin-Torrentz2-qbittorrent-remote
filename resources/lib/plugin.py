@@ -18,9 +18,9 @@ plugin = routing.Plugin()
 @plugin.route('/')
 def index():
     addDirectoryItem(plugin.handle, plugin.url_for(
-        show_category, "one"), ListItem("CHUJ CI W DUPE"), True)
+        show_category, "one"), ListItem("Category One"), True)
     addDirectoryItem(plugin.handle, plugin.url_for(
-        show_category, "two"), ListItem("TY KURWA CWELU"), True)
+        show_category, "two"), ListItem("Category Two"), True)
     endOfDirectory(plugin.handle)
 
 
