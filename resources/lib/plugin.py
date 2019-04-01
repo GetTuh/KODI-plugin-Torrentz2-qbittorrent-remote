@@ -12,6 +12,7 @@ import urlparse
 import xbmcgui
 import xbmcplugin
 import xbmc
+import qbittorrent
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
