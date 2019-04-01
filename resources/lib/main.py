@@ -17,7 +17,7 @@ def get_names_and_sources(item_searched):
 			adblock -= 1
 		else:
 			tuple+=parsing.parse_names(dl)
-	print(tuple)
+	return(tuple)
 
 
 # source = "\/6e057822dec074b5a0b792f5dc99b1697822806b"
