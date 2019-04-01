@@ -9,6 +9,7 @@ from xbmcgui import ListItem
 from xbmcplugin import addDirectoryItem, endOfDirectory
 import urlparse
 import xbmc
+import main
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
