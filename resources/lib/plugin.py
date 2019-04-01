@@ -7,12 +7,8 @@ from resources.lib import kodiutils
 from resources.lib import kodilogging
 from xbmcgui import ListItem
 from xbmcplugin import addDirectoryItem, endOfDirectory
-import urllib
 import urlparse
-import xbmcgui
-import xbmcplugin
 import xbmc
-import qbittorrent
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
