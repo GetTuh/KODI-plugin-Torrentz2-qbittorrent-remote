@@ -9,6 +9,9 @@ from xbmcgui import ListItem
 from xbmcplugin import addDirectoryItem, endOfDirectory
 import urllib
 import urlparse
+import xbmcgui
+import xbmcplugin
+import xbmc
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
@@ -33,17 +36,7 @@ def run():
 
 @plugin.route('/search')
 def search():
-	kb.doModal(2000)
-
-
-def getusersearch():
-	kb = xbmc.Keyboard('default', 'heading')
-	kb.setDefault('Enter Search Word')
-	kb.setHeading("english" + 'Search')
-	kb.setHiddenInput(False)
-	kb.doModal()
-	if (kb.isConfirmed()):
-		search_term = kb.getText()
-		return(search_term)
-	else:
-		return
+	klawiatura = xbmc.Keyboard('default', 'heading')
+	klawiatura.doModal()
+	tekst =	klawiatura.getText()
+	xbmc.executebuiltin('Notification(Wpisales:,'+str(tekst)+',5000,/script.hellow.world.png)')
