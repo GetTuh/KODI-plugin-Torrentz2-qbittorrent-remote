@@ -1,5 +1,7 @@
-from bs4 import BeautifulSoup
 import re
+
+from bs4 import BeautifulSoup
+
 import conn
 import parsing
 
@@ -18,10 +20,15 @@ def get_items(item_searched):
             data += parsing.parse_names(dl)
     return data
 
+
 def addresses():
-    address_list = [x for x in searched_sites ]
-    print(address_list)
+    address_list = [];
+    for x in searched_sites:
+        pattern = re.match("^http.+",x)
+        if pattern:
+            address_list.append(pattern.group())
+    return address_list
+
 
 searched_sites = get_items(item_searched)
-addresses()
-
+print(addresses())
