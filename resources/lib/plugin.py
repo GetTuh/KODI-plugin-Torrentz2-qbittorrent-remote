@@ -18,16 +18,16 @@ plugin = routing.Plugin()
 
 @plugin.route('/')
 def index():
-    addDirectoryItem(plugin.handle, plugin.url_for(show_category), ListItem("Category One"), True)
+    addDirectoryItem(plugin.handle, plugin.url_for(show_category), ListItem("Add torrent (search)"), True)
     endOfDirectory(plugin.handle)
 
 @plugin.route('/category')
 def show_category():
-	klawiatura = xbmc.Keyboard('default', 'heading')
-	klawiatura.doModal()
-	tekst =	klawiatura.getText()
-	xbmc.executebuiltin('Notification(Wpisales:,'+str(tekst)+',5000,/script.hellow.world.png)')
-	names_and_sources = main.get_names_and_sources("https://torrentz2.eu/search?f="+str(tekst))
+	keyboard = xbmc.Keyboard('', 'Search something')
+	keyboard.doModal()
+	input_text = keyboard.getText()
+	xbmc.executebuiltin('Notification(Wpisales:,'+str(input_text)+',5000,/script.hellow.world.png)')
+	names_and_sources = main.get_names_and_sources("https://torrentz2.eu/search?f="+str(input_text))
 	i=2
 	for x in names_and_sources:
 		addDirectoryItem(plugin.handle, "", ListItem(str(x)))
