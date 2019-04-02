@@ -10,3 +10,8 @@ Thumbs.db
 *~
 .cache
 /resources/lib/.idea
+resources/lib/.idea/workspace.xml
+resources/lib/.idea/lib.iml
+resources/lib/.idea/misc.xml
+resources/lib/.idea/modules.xml
+resources/lib/.idea/vcs.xml
