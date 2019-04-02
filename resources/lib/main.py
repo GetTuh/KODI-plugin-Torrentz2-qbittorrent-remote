@@ -2,7 +2,7 @@ import re
 import conn
 import parsing
 from bs4 import BeautifulSoup
-
+import site_parsing
 item_searched = "https://torrentz2.eu/search?f=one"
 
 
@@ -30,16 +30,16 @@ def addresses():
 
 def get_torrent_site(addresses):
     for x in addresses:
-        data = []
+        data = ()
         raw_html = conn.simple_get(x)
         soup = BeautifulSoup(raw_html, 'html.parser')
         adblock = 1
-        for dl in soup.find_all("dl"):  # parsowanie wynikow
+        for dl in soup.find_all('dt'):  # parsowanie wynikow
             if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
                 adblock -= 1
             else:
-                data += parsing.get_pirate_site(dl)
-        return data
+               print(dl)
+    return data
 
 
 searched_sites = get_items(item_searched)
