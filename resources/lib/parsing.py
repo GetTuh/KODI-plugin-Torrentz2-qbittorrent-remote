@@ -1,9 +1,7 @@
 import re
-
 from bs4 import BeautifulSoup
 
 link_to_site = "https://torrentz2.eu"
-
 
 def parse_names(html):
     names = html.find("a").get_text().encode("utf-8")
@@ -25,8 +23,4 @@ def parse_names(html):
     return (names, sources, time, size, seeds, peers)
 
 
-def source_to_magnet(source):
-    raw_html = conn.simple_get(source)
-    soup = BeautifulSoup(raw_html, 'html.parser')
-    for link in soup.body.findAll(text='monova.org'):
-        pass
+
