@@ -38,8 +38,7 @@ def get_torrent_site(addresses):
             if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
                 adblock -= 1
             else:
-               for a in soup.find('a'):
-                   print(a)
+               print(dl)
     return data
 
 
