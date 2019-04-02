@@ -29,17 +29,20 @@ def addresses():
 
 
 def get_torrent_site(addresses):
-    for x in addresses:
-        data = ()
-        raw_html = conn.simple_get(x)
-        soup = BeautifulSoup(raw_html, 'html.parser')
-        adblock = 1
-        for dl in soup.find_all('dt'):  # parsowanie wynikow
-            if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
-                adblock -= 1
-            else:
-               print(dl)
-    return data
+    try:
+        for x in addresses:
+            data = ()
+            raw_html = conn.simple_get(x)
+            soup = BeautifulSoup(raw_html, 'html.parser')
+            adblock = 1
+            for dl in soup.find_all('dt'):  # parsowanie wynikow
+                if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
+                    adblock -= 1
+                else:
+                   print(dl)
+    except TypeError:
+        pass
+
 
 
 searched_sites = get_items(item_searched)
