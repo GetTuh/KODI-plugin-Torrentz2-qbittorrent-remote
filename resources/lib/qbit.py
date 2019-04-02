@@ -12,8 +12,8 @@ qb.download_from_link(magnet)
 alltorrents = qb.torrents()
 tor_hash=""
 for torrent in alltorrents:
-	print(torrent['magnet_uri'])
-	print("elo " + magnet)
-	if(torrent['magnet_uri']==magnet):
+	# print(torrent['magnet_uri'])
+	# print("elo " + magnet)
+	if(torrent['magnet_uri'].lower()==magnet.lower()):
 		tor_hash=torrent['hash']
 print(tor_hash)
