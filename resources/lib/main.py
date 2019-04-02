@@ -35,7 +35,7 @@ def get_torrent_site(addresses):
             raw_html = conn.simple_get(x)
             soup = BeautifulSoup(raw_html, 'html.parser')
             adblock = 1
-            for dl in soup.find_all('dt'):  # parsowanie wynikow
+            for dl in soup.find_all('a',attrs={"href":re.compile('http')}):  # parsowanie wynikow
                 if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
                     adblock -= 1
                 else:
