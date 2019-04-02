@@ -43,8 +43,7 @@ def get_torrent_site(addresses):
     except TypeError:
         pass
 
-
-
-searched_sites = get_items(item_searched)
-addresses = addresses()
-get_torrent_site(addresses)
+if __name__ == "__main__":
+    searched_sites = get_items(item_searched)
+    addresses = addresses()
+    get_torrent_site(addresses)
