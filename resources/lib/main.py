@@ -1,14 +1,13 @@
-
 from bs4 import BeautifulSoup
-
 import re
+import conn
 import parsing
 
 item_searched = "https://torrentz2.eu/search?f=one"
 
 
-def get_names_and_sources(item_searched):
-    tuple = ()
+def get_items(item_searched):
+    data = ()
     raw_html = conn.simple_get(item_searched)
     soup = BeautifulSoup(raw_html, 'html.parser')
     adblock = 2
@@ -16,10 +15,13 @@ def get_names_and_sources(item_searched):
         if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
             adblock -= 1
         else:
-            tuple += parsing.parse_names(dl)
-    return (tuple)
+            data += parsing.parse_names(dl)
+    return data
 
+def addresses():
+    address_list = [x for x in searched_sites ]
+    print(address_list)
 
-# source = "\/6e057822dec074b5a0b792f5dc99b1697822806b"
-# magnet = prasing.source_to_magnet(source)
-get_names_and_sources(item_searched)
+searched_sites = get_items(item_searched)
+addresses()
+

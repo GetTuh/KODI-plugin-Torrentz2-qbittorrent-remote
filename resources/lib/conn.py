@@ -1,6 +1,6 @@
+from contextlib import closing
 from requests import get
 from requests.exceptions import RequestException
-from contextlib import closing
 
 
 def simple_get(url):

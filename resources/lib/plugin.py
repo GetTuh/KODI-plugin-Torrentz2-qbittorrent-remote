@@ -27,7 +27,7 @@ def show_category():
 	keyboard.doModal()
 	input_text = keyboard.getText()
 	xbmc.executebuiltin('Notification(Wpisales:,'+str(input_text)+',5000,/script.hellow.world.png)')
-	names_and_sources = main.get_names_and_sources("https://torrentz2.eu/search?f="+str(input_text))
+	names_and_sources = main.get_items("https://torrentz2.eu/search?f=" + str(input_text))
 	i=2
 	for x in names_and_sources:
 		addDirectoryItem(plugin.handle, "", ListItem(str(x)))
