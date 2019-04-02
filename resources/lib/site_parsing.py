@@ -2,9 +2,15 @@ import re
 from bs4 import BeautifulSoup
 import conn
 
-def torrent_sites(site):
-    sources = (site.find('a', href=True)['href'])
-    print(sources)
+def magnet(site):
+    try:
+        raw_html = conn.simple_get(site)
+        soup = BeautifulSoup(raw_html, 'html.parser')
 
+        for dl in soup.find_all('a', attrs={"href": re.compile('magnet')}):  # parsowanie wynikow
+            torrent =re.search('magnet\w\S*\w',str(dl))
+            print(torrent)
+    except (TypeError, AttributeError):
+        pass
 
 
