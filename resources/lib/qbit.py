@@ -33,3 +33,4 @@ def delete_torrent_pernament(magnet):
 	qb.delete_permanently(tor_hash)
 
 delete_torrent_pernament(magnet)
+
