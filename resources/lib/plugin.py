@@ -30,7 +30,7 @@ def show_category():
 	names_and_sources = main.get_names_and_sources("https://torrentz2.eu/search?f="+str(tekst))
 	i=2
 	for x in names_and_sources:
-			addDirectoryItem(plugin.handle, "", ListItem(str(x)))
+		addDirectoryItem(plugin.handle, "", ListItem(str(x)))
 		i+=1
 	endOfDirectory(plugin.handle)
 
