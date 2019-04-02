@@ -21,8 +21,8 @@ qbitIP='192.168.0.101:8080'
 @plugin.route('/')
 def index():
     addDirectoryItem(plugin.handle, plugin.url_for(show_category), ListItem("Add torrent (search)"), True)
-    addDirectoryItem(plugin.handle, plugin.url_for(qbitIP), ListItem("Change IP of qbittorrent client"), True)
-    addDirectoryItem(plugin.handle, plugin.url_for(qbitmenu), ListItem("Browse torrents"), True)
+    # addDirectoryItem(plugin.handle, plugin.url_for(qbitIP), ListItem("Change IP of qbittorrent client"), True)
+    # addDirectoryItem(plugin.handle, plugin.url_for(qbitmenu), ListItem("Browse torrents"), True)
     endOfDirectory(plugin.handle)
 
 @plugin.route('/category')
