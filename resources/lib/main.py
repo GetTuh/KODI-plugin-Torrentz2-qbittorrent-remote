@@ -12,7 +12,7 @@ def get_names_and_sources(item_searched):
 	raw_html = conn.simple_get(item_searched)
 	soup = BeautifulSoup(raw_html, 'html.parser')
 	adblock = 2
-	for dl in soup.find_all("dt"):  # parsowanie wynikow
+	for dl in soup.find_all("dl"):  # parsowanie wynikow
 		if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
 			adblock -= 1
 		else:
