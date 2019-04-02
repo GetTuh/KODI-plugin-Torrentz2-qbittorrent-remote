@@ -11,6 +11,7 @@ import urlparse
 import xbmc
 import main
 import qbit
+import re
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
@@ -32,16 +33,29 @@ def show_category():
 	input_text = keyboard.getText()
 	xbmc.executebuiltin('Notification(Wpisales:,'+str(input_text)+',5000,/script.hellow.world.png)')
 	names_and_sources = main.get_items("https://torrentz2.eu/search?f=" + str(input_text))
-	i=2
+	z=1
+	y=[]
 	for x in names_and_sources:
-		addDirectoryItem(plugin.handle, "", ListItem(str(x)))
-		i+=1
+		x = re.sub(r'https://torrentz2.eu/', '', x)
+		if(z%6!=0):
+			y.append(x)
+		else:
+			info = (str(y[2]+", "+str(y[3] + ", seeds: " + str(y[4]))))
+			addDirectoryItem(plugin.handle,plugin.url_for(activate, y[1]), ListItem(str(y[0])))
+			addDirectoryItem(plugin.handle,plugin.url_for(activate, y[1]), ListItem(info))
+			y=[]
+		z+=1
 	endOfDirectory(plugin.handle)
 
 @plugin.route('/qbitmenu')
 def qbitmenu():
 	addDirectoryItem(plugin.handle, "", ListItem("jestes zjebany"), True)
 	endOfDirectory(plugin.handle)
+
+@plugin.route('/activate/<link>')
+def activate(link):
+	xbmc.executebuiltin('Notification(Dodano:,'+str(link)+',5000,/script.hellow.world.png)')
+
 
 def run():
     plugin.run()
