@@ -12,6 +12,7 @@ import xbmc
 import main
 import qbit
 import re
+import site_parsing
 ADDON = xbmcaddon.Addon()
 logger = logging.getLogger(ADDON.getAddonInfo('id'))
 kodilogging.config()
@@ -31,7 +32,7 @@ def show_category():
 	keyboard = xbmc.Keyboard('', 'Search something')
 	keyboard.doModal()
 	input_text = keyboard.getText()
-	xbmc.executebuiltin('Notification(Wpisales:,'+str(input_text)+',5000,/script.hellow.world.png)')
+	# xbmc.executebuiltin('Notification(Wpisales:,'+str(input_text)+',5000,/script.hellow.world.png)')
 	names_and_sources = main.get_items("https://torrentz2.eu/search?f=" + str(input_text))
 	z=1
 	y=[]
@@ -54,8 +55,8 @@ def qbitmenu():
 
 @plugin.route('/activate/<link>')
 def activate(link):
-	xbmc.executebuiltin('Notification(Dodano:,'+str(link)+',5000,/script.hellow.world.png)')
-
-
+	xbmc.executebuiltin('Notification('+str(link)+',dodano,/script.hellow.world.png)')
+	# magnet = site_parsing.magnet("https://torrentz2.eu/"+link)
+	# xbmc.executebuiltin('Notification('+str(magnet)+',5000,/script.hellow.world.png)')
 def run():
     plugin.run()
