@@ -12,7 +12,7 @@ matrix:
     - python: "3.5"
     - python: "nightly"
   
-# command to install dependencies
+# command to install dependencies 
 install: 
   - pip install python-dateutil pytest
 # command to run tests
