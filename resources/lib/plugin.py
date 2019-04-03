@@ -32,15 +32,15 @@ def show_category():
 	keyboard = xbmc.Keyboard('', 'Search something')
 	keyboard.doModal()
 	input_text = keyboard.getText()
-	names_and_sources = main.get_items("https://torrentz2.eu/search?f=" + str(input_text))
+	names_and_sources = main.get_items("http://somefabulousleos.com/search?f=" + str(input_text))
 	z=1
 	y=[]
 	for x in names_and_sources:
-		x = re.sub(r'https://torrentz2.eu/', '', x)
+		x = re.sub(r'http://somefabulousleos.com/', '', x)
 		if(z%6!=0):
 			y.append(x)
 		else:
-			info = (str(y[2]+", "+str(y[3] + ", seeds: " + str(y[4]))))
+			info = (str(y[2])+", "+str(y[3]) + ", seeds: " + str(y[4]))
 			addDirectoryItem(plugin.handle,plugin.url_for(activate, y[1]), ListItem(str(y[0])))
 			addDirectoryItem(plugin.handle,plugin.url_for(activate, y[1]), ListItem(info))
 			y=[]
@@ -55,7 +55,7 @@ def qbitmenu():
 @plugin.route('/activate/<link>')
 def activate(link):
 	xbmc.executebuiltin('Notification('+str(link)+',Added,/script.hellow.world.png)')
-	magnet = site_parsing.link_to_magnet("https://torrentz2.eu/"+link)
+	magnet = site_parsing.link_to_magnet("http://somefabulousleos.com/"+link)
 	qbit.add_torrent(magnet)
 
 def run():
