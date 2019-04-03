@@ -56,7 +56,7 @@ def qbitmenu():
 @plugin.route('/activate/<link>')
 def activate(link):
 	xbmc.executebuiltin('Notification('+str(link)+',dodano,/script.hellow.world.png)')
-	# magnet = site_parsing.magnet("https://torrentz2.eu/"+link)
+	# magnet = site_parsing.link_to_magnet("https://torrentz2.eu/"+link)
 	# xbmc.executebuiltin('Notification('+str(magnet)+',5000,/script.hellow.world.png)')
 def run():
     plugin.run()
