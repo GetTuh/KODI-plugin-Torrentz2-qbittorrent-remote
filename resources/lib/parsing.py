@@ -4,7 +4,10 @@ import conn
 link_to_site = "https://torrentz2.eu"
 
 def parse_names(html):
-    names = html.find("a").get_text().encode("utf-8")
+    try:
+        names = html.find("a").get_text().encode("utf-8")
+    except:
+        return()
     names = str(names)
     names = re.sub(r'b\'', '', names)
     names = re.sub(r'\'', '', names)

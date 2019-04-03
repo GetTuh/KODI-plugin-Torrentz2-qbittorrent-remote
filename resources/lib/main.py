@@ -17,26 +17,3 @@ def get_items(item_searched):
         else:
             data += parsing.parse_names(dl)
     return data
-
-getmagnet = "https://torrentz2.eu/e2e457b2e77128cd20fafd0837bbdb9a4d543578";
-
-
-def get_torrent_site(addresses):
-    try:
-        data = [];
-        raw_html = conn.simple_get(addresses)
-        soup = BeautifulSoup(raw_html, 'html.parser')
-        adblock = 1
-        for dl in soup.find_all('a', attrs={"href": re.compile('http')}):  # parsowanie wynikow
-            if adblock != 0:  # dwa pierwsze wyniki to zawsze reklamy
-                adblock -= 1
-            else:
-                torrent =re.search('http\w\S*\w',str(dl))
-                site_parsing.magnet(torrent.group())
-
-    except (TypeError,AttributeError):
-        pass
-
-if __name__ == "__main__":
-    searched_sites = get_items(item_searched)
-    get_torrent_site(getmagnet)
