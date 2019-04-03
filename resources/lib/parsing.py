@@ -1,7 +1,7 @@
 import re
 from bs4 import BeautifulSoup
 import conn
-link_to_site = "http://somefabulousleos.com/"
+link_to_site = "https://torrentz2.eu"
 
 def parse_names(html):
     try:

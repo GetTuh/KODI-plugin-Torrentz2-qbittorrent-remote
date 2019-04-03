@@ -3,7 +3,7 @@ import conn
 import parsing
 from bs4 import BeautifulSoup
 import site_parsing
-
+item_searched = "https://torrentz2.eu/search?f=one"
 
 
 def get_items(item_searched):

@@ -31,3 +31,7 @@ def siteLink_to_magnet(siteLink):
 	    		return(a.get('href'))
     except:
     	return None
+
+# print(siteLink_to_magnet("https://1337x.to/torrent/3223403/Solo-A-Star-Wars-Story-2018-BluRay-1080p-YTS-YIFY/"))
+
+print(link_to_magnet("https://torrentz2.eu/e2e457b2e77128cd20fafd0837bbdb9a4d543578")) 
